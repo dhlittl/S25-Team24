@@ -21,7 +21,7 @@ steps:
       git clone https://${AZURE_GIT_USERNAME}:$(urlencode ${AZURE_GIT_PASSWORD})@${AZURE_REPO_URL} repo-mirror
       
       # Sync GitHub repository
-      cd repo
+      cd repo-mirror
       
       git remote add github "https://${GITHUB_USERNAME}:$(urlencode ${GITHUB_TOKEN})@github.com/${GITHUB_USERNAME}/${GITHUB_REPO}.git"
       
