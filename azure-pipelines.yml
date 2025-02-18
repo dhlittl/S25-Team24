@@ -22,7 +22,6 @@ steps:
       
       # Sync GitHub repository
       cd repo-mirror
-      git filter-branch --force --tree-filter 'rm -rf pages/node_modules' HEAD
       
       git push --mirror "https://${GITHUB_USERNAME}:$(urlencode ${GITHUB_TOKEN})@github.com/${GITHUB_USERNAME}/${GITHUB_REPO}.git"
       
