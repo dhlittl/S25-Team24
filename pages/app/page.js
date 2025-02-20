@@ -1,7 +1,7 @@
 "use client";
 
 import  React , { useState } from 'react';
-//import { useRouter } from "next/router";  //import useRouter for redirection later
+import { useRouter } from "next/navigation";  //import useRouter for redirection later
 
 // create form values for input email and password
 export default function LoginPage() {
@@ -11,7 +11,7 @@ export default function LoginPage() {
   });
     
   const [errors, setErrors] = useState ({}); // create to handle errors in later function
-  //const router = useRouter(); // create router instance to handle redirected
+  const router = useRouter(); // create router instance to handle redirected
 
   // function to handle errors
   const validateForm = () => {
