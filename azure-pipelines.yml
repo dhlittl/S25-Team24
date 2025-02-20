@@ -1,9 +1,10 @@
 # Pipeline to automatically mirror
 # an Azure DevOps repository in a private GitHub repository
 
-# Trigger on all branches
+# Trigger on specific
 trigger:
-- '*'
+- main
+- Amplify
 
 # Use latest Ubuntu image
 pool:
@@ -25,8 +26,11 @@ steps:
       
       git remote add github "https://${GITHUB_USERNAME}:$(urlencode ${GITHUB_TOKEN})@github.com/${GITHUB_USERNAME}/${GITHUB_REPO}.git"
       
-      git fetch --all
-      git push github --all --force
+      git fetch origin --prune
+      git fetch github --prune
+
+      # Push all refs (branches and tags) to GitHub
+      git push --mirror github
       
   displayName: 'Sync repository with GitHub'
   env:
