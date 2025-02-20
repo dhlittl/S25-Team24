@@ -4,6 +4,8 @@ import { useRouter } from "next/navigation"; //import useRouter for redirection 
 
 // create form values for input email and password
 export default function LoginPage() {
+  console.log('Login page rendering'); // Make sure the login page renders
+  
   const [formData, setFormData] = useState({
     email: "",
     password: "",
