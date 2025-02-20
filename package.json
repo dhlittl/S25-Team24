@@ -1,28 +1,24 @@
 {
-  "name": "team24",
-  "version": "0.1.0",
-  "private": true,
-  "homepage": "https://main.d1sqaxe3tjnw7.amplifyapp.com/#/",
+  "dependencies": {
+    "aws-amplify": "^6.13.1",
+    "next": "^15.1.7",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
-  "dependencies": {
-    "@dnd-kit/core": "^6.3.1",
-    "@dnd-kit/sortable": "^10.0.0",
-    "@dnd-kit/utilities": "^3.2.2",
-    "next": "15.1.7",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "recharts": "^2.15.1"
-  },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "eslint": "^9",
-    "eslint-config-next": "15.1.7",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1"
+    "@aws-amplify/backend": "^1.14.1",
+    "@aws-amplify/backend-cli": "^1.4.11",
+    "aws-cdk": "^2.1000.2",
+    "aws-cdk-lib": "^2.179.0",
+    "constructs": "^10.4.2",
+    "esbuild": "^0.25.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3"
   }
 }
