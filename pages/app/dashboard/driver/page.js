@@ -152,7 +152,7 @@ function LinkWidget ({ title, link }) {
   return (
     <div>
       <h3 className="font-semibold">{title}</h3>
-      <link hRef={link} className="text-blue-500">Go to {title}</link>
+      <Link href={link} className="text-blue-500">Go to {title}</Link>
     </div>
   );
 }

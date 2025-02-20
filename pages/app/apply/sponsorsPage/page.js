@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 export default function SponsorsPage() {
     const [sponsors, setSponsors] = useState([]);
+    const [loading, setLoading] = useState(true);
   
     // Simulates fetching from a backend (Replace this later with real database call)
     useEffect(() => {
