@@ -18,17 +18,29 @@ steps:
       sudo apt-get install gridsite-clients
       
       # Create local mirror of Azure DevOps repository
-      git clone --no-single-branch https://${AZURE_GIT_USERNAME}:$(urlencode ${AZURE_GIT_PASSWORD})@${AZURE_REPO_URL} repo-mirror
+      git clone https://${AZURE_GIT_USERNAME}:$(urlencode ${AZURE_GIT_PASSWORD})@${AZURE_REPO_URL} repo-mirror
       
-      # Sync GitHub repository
+      # Change to repo directory
       cd repo-mirror
+      
+      # List all branches for debugging
+      echo "Available branches:"
+      git branch -a
+      
+      # Fetch specific branches
+      git fetch origin main:refs/remotes/origin/main
+      git fetch origin Amplify:refs/remotes/origin/Amplify
+      
+      # Create local branches
+      git checkout -b main origin/main
+      git checkout -b Amplify origin/Amplify
       
       # Add GitHub remote
       git remote add github "https://${GITHUB_USERNAME}:$(urlencode ${GITHUB_TOKEN})@github.com/${GITHUB_USERNAME}/${GITHUB_REPO}.git"
       
-      # Fetch and push only main and Amplify branches
-      git fetch origin main:main Amplify:Amplify
-      git push github main Amplify --force
+      # Push specific branches
+      git push github main
+      git push github Amplify
       
   displayName: 'Sync repository with GitHub'
   env:
